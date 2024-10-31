@@ -24,3 +24,110 @@ _ssl
 _lzma
 _hashlib
 _uuid
+
+# --- TechSmart ---
+*disabled*
+
+# Modules that should always be present (POSIX and Windows):
+
+#_asyncio  # needed by _pyodide_core and jsproxy
+_bisect
+#_contextvars  # needed by _pyodide_core and jsproxy via asyncio/base_events.py
+#_csv  # needed by TechSmart curriculum
+_datetime
+#_decimal  # needed by TechSmart curriculum
+_heapq
+#_json  # recommended to speed up JSON serialization in interpreter
+_lsprof
+_multiprocessing
+_opcode
+_pickle
+_queue
+#_random  # needed by _pyodide_core via tempfile.py
+#_socket  # needed by _pyodide_core and jsproxy via asyncio/base_events.py
+#_statistics  # may be needed by TechSmart curriculum
+#_struct  # needed by pyodide/_package_loader.py via zipfile/__init__.py
+#_typing  # needed by _pyodide_core via _pyodide/_base.py
+_zoneinfo
+#array  # needed by _pyodide_core and jsproxy via asyncio/base_events.py and socket.py
+audioop
+#binascii  # needed by pyodide/_package_loader.py via zipfile/__init__.py
+cmath
+#math  # needed by _pyodide_core via urllib/parse.py
+mmap
+#select  # needed by _pyodide_core and jsproxy via asyncio/base_events.py and socket.py
+
+# XML
+_elementtree
+pyexpat
+
+# hashing builtins
+_blake2
+_md5
+_sha1
+#_sha2  # needed by _pyodide_core via random.py
+_sha3
+
+# text encodings and unicode
+_codecs_cn
+_codecs_hk
+_codecs_iso2022
+_codecs_jp
+_codecs_kr
+_codecs_tw
+_multibytecodec
+unicodedata
+
+# Modules with some UNIX dependencies
+
+_posixsubprocess
+_posixshmem
+fcntl
+grp
+ossaudiodev
+resource
+spwd
+syslog
+termios
+
+# Modules with UNIX dependencies that require external libraries
+
+_crypt
+nis
+
+# Modules that require external libraries.
+
+_bz2
+_ctypes
+# The _dbm module supports NDBM, GDBM with compat module, and Berkeley DB.
+_dbm
+_gdbm
+_lzma
+_uuid
+zlib
+
+# The readline module also supports libeditline (-leditline).
+# Some systems may require -ltermcap or -ltermlib.
+readline
+
+# OpenSSL bindings
+_ssl
+_hashlib
+
+# The _tkinter module.
+_tkinter
+
+# Some system have -lcurses 
+_curses
+_curses_panel
+
+# macOS specific module, needs SystemConfiguration and CoreFoundation framework
+_scproxy
+
+# Some testing modules MUST be built as shared libraries.
+
+_ctypes_test
+_testcapi
+_testimportmultiple
+_testmultiphase
+_testsinglephase
