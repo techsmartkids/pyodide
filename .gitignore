@@ -41,3 +41,6 @@ pytest-pyodide
 tools/symlinks
 xbuildenv/
 .pyodide-xbuildenv*
+
+# macOS
+.DS_Store
