@@ -781,7 +781,8 @@ API.finalizeBootstrap = function (
     importhook.register_js_finder.callKwargs({ hook: jsFinderHook });
     // Security: Disallow direct access to JS globals
     //importhook.register_js_module("js", jsglobals);
-    importhook.register_js_module("pyodide_js", pyodide);
+    // Security: Disallow access to Pyodide JS API from Python
+    //importhook.register_js_module("pyodide_js", pyodide);
   }
 
   // import pyodide_py. We want to ensure that as much stuff as possible is
