@@ -72,6 +72,9 @@ const HEADER_SIZE = 4 * 4;
 const MAP_INDEX = 5;
 
 API.makeSnapshot = function (): Uint8Array {
+  // Disable snapshot generation, since it appears to depend on the insecure "js" module
+  return new Uint8Array();
+  
   if (!API.config._makeSnapshot) {
     throw new Error(
       "makeSnapshot only works if you passed the makeSnapshot option to loadPyodide",
