@@ -517,7 +517,7 @@ class Console:
 
 
 class PyodideConsole(Console):
-    """A subclass of :py:class:`Console` that uses :js:func:`pyodide.loadPackagesFromImports` before running the code."""
+    """A subclass of :py:class:`Console` that just runs the code."""
 
     async def runcode(self, source: str, code: CodeRunner) -> ConsoleFuture:
         """Execute a code object.
@@ -529,9 +529,7 @@ class PyodideConsole(Console):
             * `("exception", message : str)` -- An exception occurred. `message` is the
             result of calling :py:meth:`Console.formattraceback`.
         """
-        from pyodide_js import loadPackagesFromImports
-
-        await loadPackagesFromImports(source)
+        # Simplified logic, to not depend on the "pyodide_js" module
         return await super().runcode(source, code)
 
 
