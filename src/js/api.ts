@@ -779,7 +779,8 @@ API.finalizeBootstrap = function (
     syncUpSnapshotLoad2(jsglobals, snapshotConfig);
   } else {
     importhook.register_js_finder.callKwargs({ hook: jsFinderHook });
-    importhook.register_js_module("js", jsglobals);
+    // Security: Disallow direct access to JS globals
+    //importhook.register_js_module("js", jsglobals);
     importhook.register_js_module("pyodide_js", pyodide);
   }
 
