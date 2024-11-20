@@ -10,10 +10,8 @@ from tempfile import NamedTemporaryFile
 from typing import IO, Any, Literal
 from zipfile import ZipFile
 
-try:
-    from pyodide_js import loadedPackages
-except ImportError:
-    loadedPackages = None
+# Simplified logic, to not depend on the "pyodide_js" module
+loadedPackages = None
 
 from .ffi import IN_BROWSER, JsArray, JsBuffer, to_js
 
