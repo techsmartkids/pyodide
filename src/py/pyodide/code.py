@@ -19,7 +19,8 @@ def run_js(code: str, /) -> Any:
     Runs ``code`` as a Javascript code string and returns the result. Unlike
     :js:func:`eval`, if ``code`` is not a string we raise a :py:exc:`TypeError`.
     """
-    from js import eval as eval_
+    # Removed because insecure
+    raise NotImplementedError('run_js is not available')
 
     if not isinstance(code, str):
         raise TypeError(
