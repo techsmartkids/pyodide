@@ -1,3 +1,6 @@
+> For information about this fork of Pyodide, how it differs, and how to maintain it,
+> please see [README-FORK.md](README-FORK.md). ⭐
+
 <div align="center">
   <a href="https://github.com/pyodide/pyodide">
   <img src="./docs/_static/img/pyodide-logo-readme.png" alt="Pyodide">
