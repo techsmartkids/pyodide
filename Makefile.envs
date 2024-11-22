@@ -72,7 +72,11 @@ export PYZIP_EXCLUDE_FILES=\
 	ssl.py \
 	lzma.py \
 	_pydecimal.py \
-	pydoc_data/
+	pydoc_data/ \
+	email/ \
+	http/ \
+	multiprocessing/ \
+	xml/
 
 # List of modules that we replace with a stub in the zipped standard library
 export PYZIP_JS_STUBS=\
