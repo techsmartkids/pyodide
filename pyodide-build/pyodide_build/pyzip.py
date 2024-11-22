@@ -55,6 +55,14 @@ def default_filterfunc(
 
         if _should_skip(path):
             return set(names)
+        
+        # Exclude as many encodings as possible
+        if path.name == 'encodings':
+            return set([n for n in names if n not in [
+                '__init__.py',
+                'aliases.py',
+                'utf_8.py',
+            ]])
 
         _names = []
         for name in names:
