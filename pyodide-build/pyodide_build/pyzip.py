@@ -62,6 +62,7 @@ def default_filterfunc(
                 '__init__.py',
                 'aliases.py',
                 'utf_8.py',
+                'utf_8_sig.py'
             ]])
 
         _names = []
