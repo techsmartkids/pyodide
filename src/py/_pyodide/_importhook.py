@@ -166,18 +166,15 @@ def add_note_to_module_not_found_error(e: ModuleNotFoundError) -> None:
         return
 
     if package_name in UNVENDORED_STDLIBS_AND_TEST:
-        msg = "The module '{package_name}' is unvendored from the Python standard library in the Pyodide distribution."
-        msg += YOU_CAN_INSTALL_IT_BY
+        msg = "The module '{package_name}' is removed from the Python standard library in TechSmart's Python."
     elif import_name in STDLIBS:
         msg = (
-            "The module '{import_name}' is removed from the Python standard library in the"
-            " Pyodide distribution due to browser limitations."
+            "The module '{import_name}' is removed from the Python standard library in TechSmart's Python."
         )
     else:
-        msg = "The module '{package_name}' is included in the Pyodide distribution, but it is not installed."
-        msg += YOU_CAN_INSTALL_IT_BY
+        # Do not expose information about optional third-party packages included in the Pyodide distribution
+        return
 
-    msg += SEE_PACKAGE_LOADING
     e.add_note(msg.format(import_name=import_name, package_name=package_name))
     setattr(e, PYODIDE_ADDED_NOTE, True)
 
